@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD ["echo", "README.md"]
+CMD ["cat", "README.md"]
