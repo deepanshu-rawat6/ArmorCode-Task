@@ -2,6 +2,6 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY ./src .
+COPY . .
 
-CMD ["python", "main.py"]
+CMD ["echo", "README.md"]
