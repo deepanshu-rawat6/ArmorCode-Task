@@ -19,19 +19,19 @@ pipeline {
             }
         }
 
-        stage('Docker login') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USER')]) {
-                    sh 'docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}'
-                }
-            }
-        }
+        // stage('Docker login') {
+        //     steps {
+        //         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USER')]) {
+        //             sh 'docker login -u ${DOCKER_USER} -p ${DOCKER_PASSWORD}'
+        //         }
+        //     }
+        // }
 
-        stage('Push Docker Image') {
-            steps {
-                    sh 'docker push ${DOCKER_IMAGE}:${DOCKER_TAG}'
-            }
-        }
+        // stage('Push Docker Image') {
+        //     steps {
+        //             sh 'docker push ${DOCKER_IMAGE}:${DOCKER_TAG}'
+        //     }
+        // }
 
         stage('Deploy Container') {
             steps {
